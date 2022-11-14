@@ -1,10 +1,10 @@
-import beerJs from './logos/beer-js.jpeg';
-import deusOps from './logos/deus-ops.jpeg';
-import frontEndDev from './logos/front-end-dev.jpeg';
+import beerJs from './logos/beerJs.jpeg';
+import deusOps from './logos/deusOps.jpeg';
+import frontEndDev from './logos/frontEndDev.jpeg';
 import frontend from './logos/frontend.jpeg';
-import itWorld from './logos/it-world.jpeg';
-import piterJs from './logos/piter-js.jpeg';
-import webStack from './logos/web-stack.jpeg';
+import itWorld from './logos/itWorld.jpeg';
+import piterJs from './logos/piterJs.jpeg';
+import webStack from './logos/webStack.jpeg';
 
 export const partnersOptions: Array<{
   id: number;
