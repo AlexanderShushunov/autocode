@@ -1,10 +1,16 @@
 import { h } from 'preact';
-import style from './style.css';
+import { OptionCarousel } from '../../components/OptionCarousel';
+import { partnersOptions } from './partnersOptions';
 
 const Partners = () => {
-     return (
-			 <div class={style.Partners}>карусель</div>
-	);
+  const handleClick = (id: number) => {
+    console.log(id);
+  };
+  return (
+    <div>
+      <OptionCarousel options={partnersOptions} onClick={handleClick} />
+    </div>
+  );
 };
 
 export default Partners;

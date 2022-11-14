@@ -1,0 +1,32 @@
+.Carousel {
+  display: flex;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: calc(100vw / 4);
+}
+
+.Carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.Carousel__slide {
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: var(--gap-between-options);
+  scroll-snap-align: start;
+  width: calc(100vw / 2);
+}
+
+.Carousel__slide:first-child {
+  margin-left: calc(100vw / 4);
+}
+
+.Carousel__slide:last-child {
+  margin-right: calc(100vw / 2);
+
+  /*  
+  * Не работает в Safary, может помочь такие стили
+  * border-right: calc(100vw / 4) solid transparent;
+  * width: calc(100vw * 3 / 4);
+  */
+}

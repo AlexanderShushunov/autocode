@@ -1,0 +1,51 @@
+.OptionCard {
+  --border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.OptionCard__imageWrapper {
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: var(--border-radius);
+  background: lightgrey;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.OptionCard__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  object-fit: cover;
+}
+
+.OptionCard__imageWrapper::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid var(--border-color, transparent);
+  border-radius: var(--border-radius);
+  pointer-events: none;
+}
+
+.OptionCard__title {
+  margin-top: 10px;
+  text-align: center;
+  width: calc(100% - 32px);
+  font-size: 16px;
+  line-height: 20px;
+}

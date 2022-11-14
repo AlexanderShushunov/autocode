@@ -1,8 +1,8 @@
-# Демо-проект 'Карусель' 
+# Демо-проект 'Карусель'
 
 ## CLI Commands
 
-``` bash
+```bash
 # install dependencies
 npm install
 
