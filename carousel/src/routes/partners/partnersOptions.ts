@@ -10,7 +10,7 @@ export const partnersOptions: Array<{
   id: number;
   img: string;
   title?: string;
-}> = [
+}> = shuffle([
   {
     id: 1,
     img: beerJs,
@@ -46,4 +46,13 @@ export const partnersOptions: Array<{
     img: webStack,
     title: 'Web Stack',
   },
-];
+]);
+
+function shuffle<T>(arr: Array<T>) {
+  const newArr = [...arr];
+  for (let i = newArr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+  }
+  return newArr;
+}
