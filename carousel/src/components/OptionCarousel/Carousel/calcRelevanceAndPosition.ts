@@ -1,9 +1,10 @@
+import { getCardWidth } from './getCardWidth';
+
 export const calcRelevanceAndPosition = (
   idx: number,
-  offset: number,
-  cardWidth: number
+  offset: number
 ): { relevance: number; position: 'left' | 'right' } => {
-  const step = offset / cardWidth;
+  const step = offset / getCardWidth();
 
   if (step === idx) {
     return {

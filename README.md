@@ -6,3 +6,5 @@
 `carousel` - демо-проект, который я "дописывал" на выступлении.
 
 ## Ссылки
+- [GitHub Copilot](https://github.com/features/copilot) - must have
+- [String Manipulation](https://plugins.jetbrains.com/plugin/2162-string-manipulation) - плагин для IDEA для манипуляций со строками

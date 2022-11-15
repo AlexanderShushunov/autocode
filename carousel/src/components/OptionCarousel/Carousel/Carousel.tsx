@@ -1,9 +1,10 @@
 import { h, RenderableProps, VNode, JSX } from 'preact';
 import { Link } from 'preact-router';
 
-import { useState, useEffect } from 'preact/hooks';
+import { useState } from 'preact/hooks';
 
 import { calcRelevanceAndPosition } from './calcRelevanceAndPosition';
+import { gapBetweenOptions } from './gapBetweenOptions';
 
 import style from './Carousel.css';
 
@@ -14,8 +15,6 @@ type Pros = {
   onClick?: (id: number) => void;
 };
 
-const GAP = 8;
-
 export const Carousel: (props: RenderableProps<Pros>) => VNode = ({
   ids,
   renderSlide,
@@ -23,7 +22,6 @@ export const Carousel: (props: RenderableProps<Pros>) => VNode = ({
   onClick = () => undefined,
 }) => {
   const [offset, setOffset] = useState(0);
-  const [optionElWidth, setOptionElWidth] = useState(0);
 
   const handleScroll = (event: JSX.TargetedEvent<HTMLDivElement>) => {
     if (event.currentTarget === null) {
@@ -32,21 +30,17 @@ export const Carousel: (props: RenderableProps<Pros>) => VNode = ({
     setOffset(event.currentTarget.scrollLeft);
   };
 
-  useEffect(() => {
-    setOptionElWidth(0.5 * document.body.offsetWidth + GAP);
-  }, []);
-
   return (
     <div
       className={`${style.Carousel} ${className}`}
       style={{
-        '--gap-between-options': `${GAP}px`,
+        '--gap-between-options': `${gapBetweenOptions}px`,
       }}
       onScroll={handleScroll}
     >
       {ids.map((id, idx) => (
         <Link key={id} className={style.Carousel__slide} onClick={() => onClick(id)}>
-          {renderSlide({ id, ...calcRelevanceAndPosition(idx, offset, optionElWidth) })}
+          {renderSlide({ id, ...calcRelevanceAndPosition(idx, offset) })}
         </Link>
       ))}
     </div>
