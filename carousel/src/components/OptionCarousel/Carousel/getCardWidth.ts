@@ -12,4 +12,3 @@ export const getCardWidth: GetCardWidth = () => {
 
   return getCardWidth.result;
 };
-
