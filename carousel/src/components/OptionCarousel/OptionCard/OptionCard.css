@@ -44,8 +44,5 @@
 
 .OptionCard__title {
   margin-top: 10px;
-  text-align: center;
   width: calc(100% - 32px);
-  font-size: 16px;
-  line-height: 20px;
 }

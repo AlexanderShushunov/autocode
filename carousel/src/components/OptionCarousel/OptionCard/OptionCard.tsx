@@ -1,5 +1,6 @@
 import { h, FunctionComponent, JSX } from 'preact';
 import css from './OptionCard.css';
+import { Title } from './Title';
 
 type Styles = {
   styleForOption: JSX.CSSProperties;
@@ -28,9 +29,9 @@ export const OptionCard: FunctionComponent<Props> = ({
         <img class={css.OptionCard__image} alt={optionImg} src={optionImg} />
       </div>
       {optionTitle && (
-        <div class={css.OptionCard__title} style={styleForTitle}>
+        <Title className={css.OptionCard__title} style={styleForTitle}>
           {optionTitle}
-        </div>
+        </Title>
       )}
     </div>
   );
