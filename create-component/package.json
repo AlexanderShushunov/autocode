@@ -1,7 +1,7 @@
 {
-  "name": "holy-create-preact-component",
-  "version": "1.0.0",
-  "bin": "index.js",
+  "name": "@ashushunov/holy-create-preact-component",
+  "version": "1.0.2",
+  "bin": "index.mjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/AlexanderShushunov/autocode.git"

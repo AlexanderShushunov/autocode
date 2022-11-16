@@ -1,3 +1,5 @@
+import path from 'node:path';
+
 export default function (plop) {
   // controller generator
   plop.setGenerator('controller', {
@@ -13,16 +15,21 @@ export default function (plop) {
     }],
     actions: [{
       type: 'add',
-      path: '{{name}}/{{name}}.tsx',
+      path: getFullPath('{{name}}', '{{name}}.tsx'),
       templateFile: 'templates/component.hbs'
     }, {
       type: 'add',
-      path: '{{name}}/index.tsx',
+      path: getFullPath('{{name}}', 'index.tsx'),
       templateFile: 'templates/index.hbs'
     }, {
       type: 'add',
-      path: '{{name}}/style.css',
+      path: getFullPath('{{name}}', 'style.css'),
       templateFile: 'templates/style.hbs'
     }]
   });
 };
+
+function getFullPath(...tail) {
+  const cwd = process.env.INIT_CWD || process.cwd();
+  return path.join(cwd, ...tail);
+}
