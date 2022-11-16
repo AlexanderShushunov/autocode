@@ -9,8 +9,16 @@ export default function (plop) {
     }],
     actions: [{
       type: 'add',
-      path: '{{name}}.tsx',
+      path: '{{name}}/{{name}}.tsx',
       templateFile: 'templates/component.hbs'
+    }, {
+      type: 'add',
+      path: '{{name}}/index.tsx',
+      templateFile: 'templates/index.hbs'
+    }, {
+      type: 'add',
+      path: '{{name}}/style.css',
+      templateFile: 'templates/style.hbs'
     }]
   });
 };

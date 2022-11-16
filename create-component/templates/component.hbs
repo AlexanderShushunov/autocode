@@ -1,7 +1,9 @@
 import { h, FunctionComponent } from 'preact';
 
+import style from './style.css';
+
 export const {{name}}: FunctionComponent = ({children}) => (
-  <div>
+  <div class={style.{{name~}} } >
     {children}
   </div>
 );
