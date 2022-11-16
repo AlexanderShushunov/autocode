@@ -2,8 +2,20 @@ import { h, FunctionComponent } from 'preact';
 
 import style from './style.css';
 
-export const {{name}}: FunctionComponent = ({children}) => (
-  <div class={style.{{name~}} } >
+type Props = {
+{{#if className}}
+  className: string;
+{{/if}}
+};
+
+export const {{name}}: FunctionComponent<Props> = ({children{{#if className}}, className{{/if~}} }) => (
+  <div class={
+    {{#if className}}
+       `${style.{{name~}} } ${className}`
+    {{else}}
+       style.{{name}}
+    {{/if}}
+  }>
     {children}
   </div>
 );

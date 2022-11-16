@@ -6,6 +6,10 @@ export default function (plop) {
       type: 'input',
       name: 'name',
       message: 'component name'
+    },{
+      type: 'confirm',
+      name: 'className',
+      message: 'add className'
     }],
     actions: [{
       type: 'add',
