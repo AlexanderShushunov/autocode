@@ -1,0 +1,26 @@
+{
+  "name": "holy-create-preact-component",
+  "version": "1.0.0",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderShushunov/autocode.git"
+  },
+  "keywords": [
+    "preact",
+    "generator",
+    "holyjs"
+  ],
+  "author": "Alexandr Shushunov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderShushunov/autocode/issues"
+  },
+  "scripts": {
+    "start": "plop"
+  },
+  "dependencies": {
+    "minimist": "^1.2.7",
+    "plop": "^3.1.1"
+  }
+}
