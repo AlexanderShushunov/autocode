@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import path from 'node:path';
 import fs from 'node:fs/promises';
-import sharp from 'sharp';
+import { makeComponent } from './makeComponent.mjs';
+import { convertToAVIF, convertToWebp } from './convertImgTo.mjs';
 
 main();
 
@@ -14,23 +15,17 @@ async function main() {
 
 async function processImg(initialImg) {
   const imgName = extractImgName(initialImg);
+  const componentName = capitalize(imgName);
+  const componentDir = getFullPath(componentName);
+
+  await fs.mkdir(componentDir);
 
   await Promise.all([
-    convertToAVIF(getFullPath(initialImg), getFullPath(`${imgName}.avif`)),
-    convertToWebp(getFullPath(initialImg), getFullPath(`${imgName}.webp`)),
+    fs.copyFile(getFullPath(initialImg), path.join(componentDir, `${imgName}.jpeg`)),
+    convertToAVIF(getFullPath(initialImg), path.join(componentDir, `${imgName}.avif`)),
+    convertToWebp(getFullPath(initialImg), path.join(componentDir, `${imgName}.webp`)),
+    makeComponent(imgName, componentName, componentDir),
   ]);
-}
-
-async function convertToAVIF(src, dest) {
-  return sharp(src)
-    .toFormat('avif', { effort: 9, quality: 50 })
-    .toFile(dest);
-}
-
-async function convertToWebp(src, dest) {
-  return sharp(src)
-    .toFormat('webp', { effort: 6, quality: 80 })
-    .toFile(dest);
 }
 
 function getFullPath(...tail) {
@@ -40,4 +35,7 @@ function getFullPath(...tail) {
 
 function extractImgName(nameFromArg) {
   return nameFromArg.split('/').at(-1).split('.').at(0);
+}
+function capitalize(str) {
+  return str[0].toUpperCase() + str.slice(1);
 }

@@ -1,6 +1,6 @@
 {
   "name": "@ashushunov/holy-wrap-picture",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "bin": "index.mjs",
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
     "url": "https://github.com/AlexanderShushunov/autocode/issues"
   },
   "dependencies": {
+    "mustache": "^4.2.0",
     "sharp": "^0.31.2"
   }
 }
