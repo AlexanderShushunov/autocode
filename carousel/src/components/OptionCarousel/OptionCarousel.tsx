@@ -1,11 +1,11 @@
-import { h, FunctionComponent } from 'preact';
+import { h, FunctionComponent, ComponentType } from 'preact';
 import { OptionCard } from './OptionCard';
 import { Carousel } from './Carousel';
 
 type Option = {
   id: number;
-  img: string;
-  title?: string;
+  img: ComponentType<{ className?: string; alt: string }>;
+  title: string;
 };
 
 type Props = {
@@ -45,8 +45,8 @@ export const OptionCarousel: FunctionComponent<Props> = ({
     return (
       <OptionCard
         styles={{ styleForOption, styleForImg, styleForTitle }}
-        optionImg={option.img}
-        optionTitle={option.title}
+        Img={option.img}
+        title={option.title}
         key={id}
       />
     );

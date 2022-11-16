@@ -1,49 +1,51 @@
-import beerJs from './logos/beerJs.jpeg';
-import deusOps from './logos/deusOps.jpeg';
-import frontEndDev from './logos/frontEndDev.jpeg';
-import frontend from './logos/frontend.jpeg';
-import itWorld from './logos/itWorld.jpeg';
-import piterJs from './logos/piterJs.jpeg';
-import webStack from './logos/webStack.jpeg';
+import { ComponentType } from 'preact';
+
+import { BeerJs } from './logos/BeerJs';
+import { DeusOps } from './logos/DeusOps';
+import { FrontEndDev } from './logos/FrontEndDev';
+import { Frontend } from './logos/Frontend';
+import { ItWorld } from './logos/ItWorld';
+import { PiterJs } from './logos/PiterJs';
+import { WebStack } from './logos/WebStack';
 
 export const partnersOptions: Array<{
   id: number;
-  img: string;
-  title?: string;
+  img: ComponentType<{ className?: string; alt: string }>;
+  title: string;
 }> = shuffle([
   {
     id: 1,
-    img: beerJs,
+    img: BeerJs,
     title: 'BeerJS',
   },
   {
     id: 2,
-    img: deusOps,
+    img: DeusOps,
     title: 'DeusOps',
   },
   {
     id: 3,
-    img: frontEndDev,
+    img: FrontEndDev,
     title: 'FrontEndDev',
   },
   {
     id: 4,
-    img: frontend,
+    img: Frontend,
     title: 'Frontend',
   },
   {
     id: 5,
-    img: itWorld,
+    img: ItWorld,
     title: 'IT-World\n',
   },
   {
     id: 6,
-    img: piterJs,
+    img: PiterJs,
     title: 'PiterJS',
   },
   {
     id: 7,
-    img: webStack,
+    img: WebStack,
     title: 'Web Stack',
   },
 ]);

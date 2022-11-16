@@ -1,4 +1,4 @@
-import { h, FunctionComponent, JSX } from 'preact';
+import { h, FunctionComponent, JSX, ComponentType } from 'preact';
 import css from './OptionCard.css';
 import { Title } from './Title';
 
@@ -9,15 +9,15 @@ type Styles = {
 };
 
 type Props = {
-  optionImg: string;
-  optionTitle?: string;
+  Img: ComponentType<{ className?: string; alt: string }>;
+  title: string;
   className?: string;
   styles?: Styles;
 };
 
 export const OptionCard: FunctionComponent<Props> = ({
-  optionImg,
-  optionTitle,
+  Img,
+  title,
   className = '',
   styles = { styleForOption: {}, styleForImg: {}, styleForTitle: {} },
 }) => {
@@ -26,13 +26,11 @@ export const OptionCard: FunctionComponent<Props> = ({
   return (
     <div class={`${css.OptionCard} ${className}`} style={styleForOption}>
       <div class={css.OptionCard__imageWrapper} style={styleForImg}>
-        <img class={css.OptionCard__image} alt={optionImg} src={optionImg} />
+        <Img className={css.OptionCard__image} alt={title} />
       </div>
-      {optionTitle && (
-        <Title className={css.OptionCard__title} style={styleForTitle}>
-          {optionTitle}
-        </Title>
-      )}
+      <Title className={css.OptionCard__title} style={styleForTitle}>
+        {title}
+      </Title>
     </div>
   );
 };
