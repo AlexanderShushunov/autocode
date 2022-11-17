@@ -1,1 +1,1 @@
-export { BeerJs } from './BeerJs'
+export { BeerJs, preloadBeerJs } from './BeerJs';
