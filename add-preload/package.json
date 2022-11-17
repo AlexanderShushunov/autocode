@@ -1,0 +1,26 @@
+{
+  "name": "@ashushunov/holy-add-preload",
+  "version": "1.0.0",
+  "bin": "index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderShushunov/autocode.git"
+  },
+  "keywords": [
+    "preact",
+    "codemode",
+    "preload",
+    "holyjs"
+  ],
+  "author": "Alexandr Shushunov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderShushunov/autocode/issues"
+  },
+  "dependencies": {
+    "jscodeshift": "^0.14.0"
+  },
+  "devDependencies": {
+    "@types/jscodeshift": "^0.11.5"
+  }
+}
