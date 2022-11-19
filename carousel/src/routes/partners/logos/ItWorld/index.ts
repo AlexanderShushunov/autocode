@@ -1,1 +1,1 @@
-export { ItWorld } from './ItWorld'
+export { ItWorld, preloadItWorld } from './ItWorld';

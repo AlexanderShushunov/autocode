@@ -1,1 +1,1 @@
-export { Frontend } from './Frontend'
+export { Frontend, preloadFrontend } from './Frontend';

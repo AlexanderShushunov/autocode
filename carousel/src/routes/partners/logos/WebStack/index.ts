@@ -1,1 +1,1 @@
-export { WebStack } from './WebStack'
+export { WebStack, preloadWebStack } from './WebStack';

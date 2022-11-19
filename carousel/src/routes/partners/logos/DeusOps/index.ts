@@ -1,1 +1,1 @@
-export { DeusOps } from './DeusOps'
+export { DeusOps, preloadDeusOps } from './DeusOps';

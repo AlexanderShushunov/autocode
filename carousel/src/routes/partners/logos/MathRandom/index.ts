@@ -1,1 +1,1 @@
-export { MathRandom } from './MathRandom'
+export { MathRandom, preloadMathRandom } from './MathRandom';

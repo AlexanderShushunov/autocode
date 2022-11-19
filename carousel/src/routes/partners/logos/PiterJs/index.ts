@@ -1,1 +1,1 @@
-export { PiterJs } from './PiterJs'
+export { PiterJs, preloadPiterJs } from './PiterJs';
