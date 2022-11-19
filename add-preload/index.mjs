@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -23,7 +24,6 @@ async function main() {
 }
 
 const options = {
-  dry: true,
   print: true,
   verbose: 1,
   babel: true,

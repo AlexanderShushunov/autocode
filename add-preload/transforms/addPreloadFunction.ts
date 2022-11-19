@@ -24,7 +24,7 @@ function creatFunctionalStatement(j: API['j'], componentName: string) {
     preloadFunctionIdentifier,
     [],
     j.blockStatement([
-      statement`preloadImage({ avif: imgAvifSrc, webp: imgWebpSrc, other: imgJpegSrc })`,
+      statement`return preloadImage({ avif: imgAvifSrc, webp: imgWebpSrc, other: imgJpegSrc })`,
     ])
   );
 }
