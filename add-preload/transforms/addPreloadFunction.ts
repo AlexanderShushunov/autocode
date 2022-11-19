@@ -1,11 +1,8 @@
 import { API, FileInfo } from 'jscodeshift';
-import { TransformOptions } from './TransformOptions';
+import { extractComponentName } from './extractComponentName';
 
-export default function addPreloadFunction(
-  file: FileInfo,
-  { j }: API,
-  { componentName }: TransformOptions
-) {
+export default function addPreloadFunction(file: FileInfo, { j }: API) {
+  const componentName = extractComponentName(file.path);
   const { statement } = j.template;
   const root = j(file.source);
 
