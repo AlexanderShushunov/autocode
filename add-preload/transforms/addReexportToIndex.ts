@@ -1,5 +1,5 @@
-import { API, FileInfo } from "jscodeshift";
-import { TransformOptions } from "./TransformOptions";
+import { API, FileInfo } from 'jscodeshift';
+import { TransformOptions } from './TransformOptions';
 
 export default function addReexportToIndex(
   file: FileInfo,

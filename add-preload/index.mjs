@@ -2,20 +2,27 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { run } from 'jscodeshift/src/Runner.js';
 
-const transformIndex = getTransformPath('addReexportToIndex')
+const transformIndex = getTransformPath('addReexportToIndex');
+const transformComponent = getTransformPath('addPreloadFunction');
 
 const options = {
   dry: true,
   print: true,
   verbose: 1,
-  extensions: 'ts',
-  parser: 'ts',
   babel: true,
+  componentName: 'BeerJs',
 };
 
-const res = await run(transformIndex, ['./example/index.ts'], {...options, componentName: 'BeerJs'});
-
-console.log('res --', res);
+await run(transformIndex, ['./example/index.ts'], {
+  ...options,
+  extensions: 'ts',
+  parser: 'ts',
+});
+await run(transformComponent, ['./example/BeerJs.tsx'], {
+  ...options,
+  extensions: 'tsx',
+  parser: 'tsx',
+});
 
 function getWorkingDirPath(...tail) {
   const cwd = process.env.INIT_CWD || process.cwd();

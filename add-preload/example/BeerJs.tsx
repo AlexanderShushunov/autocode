@@ -1,5 +1,4 @@
 import { h, FunctionComponent } from 'preact';
-import { preloadImage } from '../../../../utils/preloadImage';
 
 import imgAvifSrc from './beerJs.avif';
 import imgWebpSrc from './beerJs.webp';
@@ -17,7 +16,3 @@ export const BeerJs: FunctionComponent<Props> = ({ alt, className }) => (
     <img class={className} src={imgJpegSrc} alt={alt} />
   </picture>
 );
-
-export function preloadBeerJs() {
-  return preloadImage({ avif: imgAvifSrc, webp: imgWebpSrc, other: imgJpegSrc });
-}
