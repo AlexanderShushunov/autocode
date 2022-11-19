@@ -1,6 +1,8 @@
 # Материалы к выступлению 'Код как данные, или будь крутым программистом'
 
-Выступление на [HolyJS 2022](https://holyjs.ru/schedule/video?v=MTAwMTQzwooyMDAwMTM2NsKKMA).
+- Выступление на [HolyJS 2022](https://holyjs.ru/schedule/video?v=MTAwMTQzwooyMDAwMTM2NsKKMA).
+  [Слайды](https://drive.google.com/file/d/1YK4t4fRgm4mXckqHVhDPFMCVs99snHLC/view?usp=share_link),
+  [Видео (TBD)]().
 
 ## Состав
 - `carousel` - демо-проект, который я "дописывал" на выступлении.
